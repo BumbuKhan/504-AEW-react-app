@@ -1,3 +1,7 @@
 .lessons-list__badge {
     float: right;
 }
+
+.word__example {
+    margin-bottom: 0;
+}
