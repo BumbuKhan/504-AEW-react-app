@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import LessonsList from '../containers/LessonsList';
+import ViewLesson from '../containers/ViewLesson';
 
 class App extends Component {
     render() {
@@ -9,6 +10,7 @@ class App extends Component {
                 <br/>
 
                 <LessonsList />
+                <ViewLesson />
             </div>
         );
     }
