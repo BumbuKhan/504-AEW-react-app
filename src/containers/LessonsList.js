@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Lesson from '../components/Lesson';
 
 class LessonsList extends Component {
-    getLessonsLis() {
+    getLessonsList() {
         if (!this.props.lessons.length) {
             return 'No lessons yet';
         }
@@ -17,7 +17,7 @@ class LessonsList extends Component {
         return (
             <div>
                 <div className="list-group">
-                    {this.getLessonsLis()}
+                    {this.getLessonsList()}
                 </div>
             </div>
         );
