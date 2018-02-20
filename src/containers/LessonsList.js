@@ -3,9 +3,23 @@ import {connect} from 'react-redux';
 import Lesson from '../components/Lesson';
 
 class LessonsList extends Component {
+    getLessonsLis() {
+        if (!this.props.lessons.length) {
+            return 'No lessons yet';
+        }
+
+        return this.props.lessons.map((lesson) => {
+            return <Lesson key={lesson.id} {...lesson}/>
+        });
+    }
+
     render() {
         return (
-            <Lesson />
+            <div>
+                <div className="list-group">
+                    {this.getLessonsLis()}
+                </div>
+            </div>
         );
     }
 }
