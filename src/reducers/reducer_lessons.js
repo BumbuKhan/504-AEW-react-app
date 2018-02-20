@@ -1,22 +1,13 @@
-const defaultState = [
-    {
-        'id' : 1,
-        'title': 'Lesson 1'
-    },
-    {
-        'id' : 2,
-        'title': 'Lesson 2'
-    },
-    {
-        'id' : 3,
-        'title': 'Lesson 3'
-    },
-    {
-        'id' : 4,
-        'title': 'Lesson 4'
-    }
-];
+import {FETCH_LESSONS} from '../actions';
+const defaultState = [];
 
 export default (state = defaultState, action) => {
-    return state;
+    switch (action.type) {
+        case FETCH_LESSONS:
+            console.log(action.payload.data.items);
+            return {lessons: action.payload.data.items};
+        default:
+            console.log('001');
+            return state;
+    }
 }
