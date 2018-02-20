@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Lesson from '../components/Lesson';
+import {fetchLessons} from '../actions';
 
 class LessonsList extends Component {
+    componentDidMount() {
+        this.props.fetchLessons();
+    }
+
     getLessonsList() {
         if (!this.props.lessons.length) {
             return 'No lessons yet';
@@ -28,4 +33,4 @@ function mapStateToProps(state) {
     return {lessons: state.lessons};
 }
 
-export default connect(mapStateToProps)(LessonsList);
+export default connect(mapStateToProps, {fetchLessons})(LessonsList);
