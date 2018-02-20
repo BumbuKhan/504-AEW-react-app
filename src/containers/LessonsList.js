@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 class LessonsList extends Component {
     render() {
@@ -20,4 +21,8 @@ class LessonsList extends Component {
     }
 }
 
-export default LessonsList;
+function mapStateToProps(state) {
+    return {lessons: state.lessons};
+}
+
+export default connect(mapStateToProps)(LessonsList);
