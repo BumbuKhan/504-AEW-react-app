@@ -6,7 +6,6 @@ export default (state = defaultState, action) => {
         case FETCH_LESSONS:
             return [...action.payload.data.items];
         default:
-            console.log('001');
             return state;
     }
 }
