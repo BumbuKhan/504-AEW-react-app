@@ -32,9 +32,16 @@ class ViewLesson extends Component {
         if (!this.state.isLoading && !this.props.lessonData.words.length) {
             return 'No words yet'
         } else {
-            return this.props.lessonData.words.map((word) => {
+            let words = this.props.lessonData.words.map((word) => {
                 return <Word key={word.id} {...word}/>
             });
+
+            return (
+                <div>
+                    <h4 className="mb-3">{this.props.lessonData.title}</h4>
+                    {words}
+                </div>
+            );
         }
 
 

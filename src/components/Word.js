@@ -2,7 +2,7 @@ import React from 'react';
 
 export default (props) => {
     return (
-        <div className="card">
+        <div className="card mb-2">
             <div className="card-body">
                 <h5 className="card-title">{props.word}</h5>
                 <h6 className="card-subtitle mb-3 text-muted">{props.definition}</h6>
