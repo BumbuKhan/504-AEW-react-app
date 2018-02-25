@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import LessonsList from '../containers/LessonsList';
 import ViewLesson from '../containers/ViewLesson';
-import {Route} from 'react-router-dom';
+import {Route, Redirect} from 'react-router-dom';
 
 class App extends Component {
     render() {
@@ -11,6 +11,9 @@ class App extends Component {
                 <br/>
 
                 <Route exact path="/" component={LessonsList}/>
+                <Route path="/lessons" render={() => {
+                    return <Redirect to="/"/>
+                }} />
                 <Route path="/lessons/:id" component={ViewLesson}/>
             </div>
         );
