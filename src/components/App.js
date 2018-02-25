@@ -11,7 +11,7 @@ class App extends Component {
                 <br/>
 
                 <Route exact path="/" component={LessonsList}/>
-                <Route path="/lessons" render={() => {
+                <Route exact path="/lessons" render={() => {
                     return <Redirect to="/"/>
                 }} />
                 <Route path="/lessons/:id" component={ViewLesson}/>
