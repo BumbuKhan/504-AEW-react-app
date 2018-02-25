@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Lesson from '../components/Lesson';
+import LessonListItem from '../components/LessonListItem';
 import {fetchLessons} from '../actions';
 
 class LessonsList extends Component {
@@ -31,7 +31,7 @@ class LessonsList extends Component {
         }
 
         return this.props.lessons.map((lesson) => {
-            return <Lesson key={lesson.id} {...lesson}/>
+            return <LessonListItem key={lesson.id} {...lesson}/>
         });
     }
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import LessonsList from '../containers/LessonsList';
+import {Route} from 'react-router-dom';
 
 class App extends Component {
     render() {
@@ -8,7 +9,7 @@ class App extends Component {
                 <h3>504 Absolutely Essential Words</h3>
                 <br/>
 
-                <LessonsList />
+                <Route exact path="/" component={LessonsList} />
             </div>
         );
     }
