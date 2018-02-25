@@ -1,4 +1,5 @@
 import {FETCH_LESSONS} from '../actions';
+
 const defaultState = [];
 
 export default (state = defaultState, action) => {

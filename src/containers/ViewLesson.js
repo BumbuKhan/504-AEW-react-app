@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import Word from '../components/Word';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+import Word from '../components/Word';
 import {fetchLessonWords} from '../actions';
 
 class ViewLesson extends Component {
@@ -38,13 +39,16 @@ class ViewLesson extends Component {
 
             return (
                 <div>
-                    <h4 className="mb-3">{this.props.lessonData.title}</h4>
+                    <div className="mb-3">
+                        <Link to="/" className="btn btn-outline-primary btn-sm">
+                            &larr;&nbsp;All lessons
+                        </Link>
+                        &nbsp;&nbsp;<span style={{'font-size' : '20px', 'font-weight' : 'bold'}}>{this.props.lessonData.title}</span>
+                    </div>
                     {words}
                 </div>
             );
         }
-
-
     }
 
     render() {

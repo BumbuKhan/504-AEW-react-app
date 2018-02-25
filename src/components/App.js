@@ -10,8 +10,8 @@ class App extends Component {
                 <h3>504 Absolutely Essential Words</h3>
                 <br/>
 
-                <Route exact path="/" component={LessonsList} />
-                <Route path="/lessons/:id" component={ViewLesson} />
+                <Route exact path="/" component={LessonsList}/>
+                <Route path="/lessons/:id" component={ViewLesson}/>
             </div>
         );
     }
