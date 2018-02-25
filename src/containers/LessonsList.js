@@ -4,12 +4,29 @@ import Lesson from '../components/Lesson';
 import {fetchLessons} from '../actions';
 
 class LessonsList extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isLoading: true,
+        };
+    }
+
     componentDidMount() {
-        this.props.fetchLessons();
+        this.props.fetchLessons()
+            .then(() => {
+                this.setState({
+                    isLoading: false
+                });
+            })
     }
 
     getLessonsList() {
-        if (!this.props.lessons.length) {
+        if (this.state.isLoading) {
+            return 'Loading...';
+        }
+
+        if (!this.props.lessons.length && !this.state.isLoading) {
             return 'No lessons yet';
         }
 
